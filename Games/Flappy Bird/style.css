@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading top */
+.game-title {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+/* Center container */
+.game-container {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Responsive Canvas */
+canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 700 / 400;
+  border: 3px solid black;
+  display: block;
+}
+
+/* Game Over Box */
+#gameOverScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  width: 80%;
+  max-width: 300px;
+}
+
+.hide {
+  display: none;
+}
+
+/* Stylish Restart Button */
+#restartBtn {
+  margin-top: 15px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#restartBtn:hover {
+  transform: scale(1.1);
+}
+
+#restartBtn:active {
+  transform: scale(0.95);
+}

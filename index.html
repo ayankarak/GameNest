@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">GameNest</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#">Home</a></li>
+<li><a href="#games">Games</a></li>
+<li><a href="#">Login</a></li>
+<li><a href="#">Sign Up</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">☰</div>
+
+</nav>
+
+    <header>
+        <h1>🎮 MY GAME'S</h1>
+        <p>Play Some Classic JavaScript Games</p>
+    </header>
+
+    <section class="games-container" id="games">
+
+        <div class="game-card">
+            <img src="assets/rock_paper.png" alt="Rock Paper Scissors">
+            <h2>Rock Paper Scissors</h2>
+            <p>Interactive game with dynamic result logic.</p>
+            <a href="Games/Rock Paper Scissor/index.html" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/tic.png" alt="Tic Tac Toe">
+            <h2>Tic Tac Toe</h2>
+            <p>Dynamic winner detection with clean UI logic.</p>
+            <a href="https://ayankarak.github.io/TIC-TAC_TOE/" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/snake.png" alt="Snake Game">
+            <h2>Snake Game</h2>
+            <p>Canvas-based game with score tracking & smooth restart.</p>
+            <a href="https://ayankarak.github.io/MY-SNAKE-GAME/" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/flappy_back.png" alt="Flappy Bird">
+            <h2>Flappy Bird</h2>
+            <p>Collision detection with animated bird mechanics.</p>
+            <a href="Games/Flappy Bird/index.html" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/pong.png" alt="Pong Game">
+            <h2>Pong Game</h2>
+            <p>Classic paddle game with real-time ball physics.</p>
+            <a href="Games/Table tennis/index.html" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/tetris.png" alt="Tetris">
+            <h2>Tetris</h2>
+            <p>Grid-based block rotation & row clearing logic.</p>
+            <a href="https://ayankarak.github.io/Tetris/" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/car.png" alt="Car Racing">
+            <h2>Car Racing</h2>
+            <p>Obstacle avoidance with increasing difficulty.</p>
+            <a href="https://ayankarak.github.io/MY-CAR-GAMES/" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/match.png" alt="Match The Image">
+            <h2>Match The Image</h2>
+            <p>Memory-based card matching game with flip animation logic.</p>
+            <a href="https://ayankarak.github.io/MATCH-THE-IMAGES//" class="play-btn">▶ Play Game</a>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/cross.png" alt="Cross Sum Game">
+            <h2>Cross Sum</h2>
+            <p>Grid-based puzzle where row and column sums must match the target numbers.</p>
+            <a href="Games/Cross Sums/index.html" class="play-btn">▶ Play Game</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/water.png" alt="Water Color Sort Game">
+            <h2>Water Color Sort</h2>
+            <p>Sort the colored water into the correct tubes using logic.</p>
+            <a href="Games/Water Color sort/index.html" class="play-btn">▶ Play Game</a>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Ayan | Portfolio Project
+    </footer>
+
+    <script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+navLinks.classList.toggle("active");
+});
+
+</script>
+
+</body>
+
+</html>

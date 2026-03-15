@@ -1,0 +1,233 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background: radial-gradient(circle at top,#1a1a1a,#0a0a0a 60%);
+color:white;
+text-align:center;
+min-height:100vh;
+}
+
+/* subtle animated glow */
+
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:rgba(245, 249, 2, 0.08);
+filter:blur(120px);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-200px;
+right:-200px;
+width:600px;
+height:600px;
+background:rgba(255,152,0,0.05);
+filter:blur(120px);
+z-index:-1;
+}
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#31241f;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#0a2a92;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+.nav-links li a{
+text-decoration:none;
+color:#ccc;
+font-size:15px;
+position:relative;
+}
+
+/* NAVBAR HOVER */
+
+.nav-links li a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:#0a2a92;
+left:0;
+bottom:-5px;
+transition:.3s;
+}
+
+.nav-links li a:hover{
+color:#0a2a92;
+}
+
+.nav-links li a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+color:#0a2a92;
+}
+
+/* HEADER */
+
+header{
+padding:60px 20px 30px;
+}
+
+header h1{
+font-size:40px;
+color:#0a2a92;
+margin-bottom:10px;
+}
+
+header p{
+color:#aaa;
+font-size:18px;
+}
+
+/* GAMES GRID */
+
+.games-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+/* GAME CARD */
+
+.game-card{
+background:#1c1c1c;
+border-radius:12px;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 0 10px rgba(255,152,0,.2);
+}
+
+.game-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(255,152,0,.6);
+}
+
+.game-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+transition:.4s;
+}
+
+.game-card:hover img{
+transform:scale(1.08);
+}
+
+.game-card h2{
+margin:15px 0 8px;
+color:#ff9800;
+}
+
+.game-card p{
+font-size:14px;
+color:#bbb;
+padding:0 15px;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.play-btn{
+display:inline-block;
+margin-bottom:20px;
+padding:10px 22px;
+background:#ff9800;
+color:black;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+transition:.25s;
+}
+
+.play-btn:hover{
+background:#ffa726;
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(255,152,0,.35);
+}
+
+/* FOOTER */
+
+footer{
+padding:20px;
+font-size:14px;
+color:#777;
+border-top:1px solid #222;
+margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:65px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px 0;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.games-container{
+grid-template-columns:1fr;
+padding:25px;
+}
+
+header h1{
+font-size:30px;
+}
+
+}

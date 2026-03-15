@@ -1,0 +1,191 @@
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial, sans-serif;
+text-align:center;
+margin:0;
+padding:0;
+}
+
+/* GAME BOARD */
+
+#game{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:10px;
+padding:10px;
+}
+
+/* MOVES TEXT */
+
+#moves{
+font-size:20px;
+font-weight:bold;
+margin-top:15px;
+margin-bottom:10px;
+}
+
+/* DIFFICULTY BUTTONS */
+
+.difficulty{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.difficulty button{
+padding:10px 22px;
+font-size:15px;
+font-weight:600;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+color:white;
+transition:all .25s ease;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.difficulty button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.4);
+}
+
+.difficulty button:active{
+transform:scale(0.96);
+}
+
+/* BOTTOM BUTTONS */
+
+.bottom-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.bottom-buttons button{
+padding:8px 18px;
+font-size:14px;
+font-weight:600;
+border:none;
+border-radius:6px;
+cursor:pointer;
+color:white;
+background:linear-gradient(135deg,#fefe04,#ff3f34);
+transition:all .25s ease;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+.bottom-buttons button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.5);
+}
+
+.bottom-buttons button:active{
+transform:scale(0.95);
+}
+
+/* TUBES */
+
+.tube{
+width:70px;
+height:220px;
+border:3px solid white;
+border-radius:0 0 35px 35px;
+display:flex;
+flex-direction:column-reverse;
+padding:5px;
+cursor:pointer;
+position:relative;
+transition:transform .4s;
+}
+
+/* SELECTED TUBE */
+
+.selected{
+border:3px solid yellow;
+}
+
+/* COLOR BLOCKS */
+
+.color{
+height:50px;
+border-radius:6px;
+margin:2px 0;
+}
+
+/* POUR ANIMATION */
+
+.tube.pouring{
+transform:rotate(-35deg) translateY(-10px);
+}
+
+.pour-stream{
+position:absolute;
+width:10px;
+height:80px;
+top:-70px;
+left:30px;
+border-radius:10px;
+animation:flow .5s linear;
+}
+
+@keyframes flow{
+
+0%{
+height:0;
+opacity:0;
+}
+
+50%{
+height:80px;
+opacity:1;
+}
+
+100%{
+height:0;
+opacity:0;
+}
+
+}
+
+/* ---------------- */
+/* MOBILE VERSION */
+/* ---------------- */
+
+@media(max-width:600px){
+
+.tube{
+width:55px;
+height:180px;
+}
+
+.color{
+height:38px;
+}
+
+#game{
+gap:18px;
+}
+
+#moves{
+font-size:18px;
+}
+
+.difficulty button{
+padding:8px 16px;
+font-size:13px;
+}
+
+.bottom-buttons button{
+padding:7px 14px;
+font-size:13px;
+}
+
+}
