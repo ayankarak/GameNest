@@ -5,6 +5,11 @@ background:#222;
 color:white;
 }
 
+body {
+  overflow: hidden;  
+  touch-action: none; 
+}
+
 .arena{
 position:relative;
 width:520px;
