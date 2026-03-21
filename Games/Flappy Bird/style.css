@@ -7,6 +7,11 @@ body {
   align-items: center;
 }
 
+body {
+  overflow: hidden;  
+  touch-action: none; 
+}
+
 /* Heading top */
 .game-title {
   color: white;
