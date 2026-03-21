@@ -70,7 +70,6 @@ function drawPipes() {
     );
   });
 }
-
 function update() {
   if (gameOver) return;
 
