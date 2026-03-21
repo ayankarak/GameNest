@@ -42,6 +42,7 @@ let score = 0;
 let frames = 0;
 let gameOver = false;
 
+
 function drawBird() {
   ctx.fillStyle = "yellow";
   ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
@@ -53,14 +54,12 @@ function drawPipes() {
     let topHeight = pipe.top;
     let bottomHeight = canvas.height - pipe.bottom;
 
-    // TOP PIPE (rotated)
     ctx.save();
     ctx.translate(pipe.x + pipeWidth / 2, pipe.top);
     ctx.rotate(Math.PI);
     ctx.drawImage(pipeImg, -pipeWidth / 2, 0, pipeWidth, topHeight);
     ctx.restore();
 
-    // BOTTOM PIPE
     ctx.drawImage(
       pipeImg,
       pipe.x,
@@ -70,21 +69,20 @@ function drawPipes() {
     );
   });
 }
+
 function update() {
   if (gameOver) return;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // BACKGROUND SCROLL
+  // background
   bgX -= bgSpeed;
-  if (bgX <= -canvas.width) {
-    bgX = 0;
-  }
+  if (bgX <= -canvas.width) bgX = 0;
 
   ctx.drawImage(bgImage, bgX, 0, canvas.width, canvas.height);
   ctx.drawImage(bgImage, bgX + canvas.width, 0, canvas.width, canvas.height);
 
-  // BIRD PHYSICS
+  // bird physics
   bird.velocity += bird.gravity;
   bird.y += bird.velocity;
 
@@ -92,7 +90,7 @@ function update() {
     endGame();
   }
 
-  // PIPE GENERATION
+  // pipes
   if (frames % 120 === 0) {
     let topHeight = Math.random() * 180 + 40;
 
@@ -105,10 +103,9 @@ function update() {
   }
 
   pipes.forEach((pipe, index) => {
-
     pipe.x -= 3;
 
-    // COLLISION
+    // collision
     if (
       bird.x < pipe.x + pipeWidth &&
       bird.x + bird.width > pipe.x &&
@@ -117,13 +114,12 @@ function update() {
       endGame();
     }
 
-    // SCORE
     if (!pipe.scored && pipe.x + pipeWidth < bird.x) {
-      score+=10;
+      score += 10;
       pipe.scored = true;
     }
 
-    // REMOVE OFFSCREEN
+
     if (pipe.x + pipeWidth < 0) {
       pipes.splice(index, 1);
     }
@@ -140,21 +136,41 @@ function update() {
   requestAnimationFrame(update);
 }
 
+
 function endGame() {
   gameOver = true;
   document.getElementById("finalScore").innerText = score;
   document.getElementById("gameOverScreen").classList.remove("hide");
 }
 
-document.addEventListener("keydown", () => {
-  bird.velocity = bird.lift;
+
+function flap() {
+  if (gameOver) {
+    startGame();
+  } else {
+    bird.velocity = bird.lift;
+  }
+}
+
+// keyboard (laptop)
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    flap();
+  }
 });
 
-canvas.addEventListener("click", () => {
-  bird.velocity = bird.lift;
+// mouse (laptop)
+canvas.addEventListener("click", flap);
+
+// touch (mobile)
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  flap();
 });
 
+// restart button
 document.getElementById("restartBtn").addEventListener("click", startGame);
+
 
 function startGame() {
   bird.y = 200;
@@ -164,6 +180,8 @@ function startGame() {
   frames = 0;
   bgX = 0;
   gameOver = false;
+
   document.getElementById("gameOverScreen").classList.add("hide");
+
   update();
 }
