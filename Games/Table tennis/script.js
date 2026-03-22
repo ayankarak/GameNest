@@ -24,7 +24,6 @@ const ball = {
     dx: 4,
     dy: 4
 };
-
 const leftPaddle = {
     x: 10,
     y: canvas.height / 2 - 50,
