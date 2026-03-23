@@ -147,7 +147,7 @@ function setDifficulty(level) {
 
     difficultyPanel.style.display = "none";
 
-    gameLoop(); // 🎮 start game
+    gameLoop(); 
 }
 
 function moveAI() {
@@ -263,7 +263,7 @@ function restartGame() {
 //     if (rightPaddle.y + rightPaddle.height > canvas.height)
 //         rightPaddle.y = canvas.height - rightPaddle.height;
 
-//     drawNet(); // 👈 YEH ADD KARNA HAI
+//     drawNet(); 
 //     drawBall();
 //     drawPaddle(leftPaddle);
 //     drawPaddle(rightPaddle);
