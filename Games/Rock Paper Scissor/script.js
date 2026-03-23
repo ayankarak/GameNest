@@ -17,124 +17,124 @@ let userScore = 0;
 let compScore = 0;
 
 const moves = {
-rock:"✊",
-paper:"📄",
-scissors:"✂️"
+    rock: "✊",
+    paper: "📄",
+    scissors: "✂️"
 };
 
-function computerChoice(){
+function computerChoice() {
 
-const options=["rock","paper","scissors"];
-const random=Math.floor(Math.random()*3);
+    const options = ["rock", "paper", "scissors"];
+    const random = Math.floor(Math.random() * 3);
 
-return options[random];
-
-}
-
-function animateComputer(){
-
-const options=["✊","📄","✂️"];
-
-let count=0;
-
-const interval=setInterval(()=>{
-
-computerMove.innerText=options[count%3];
-
-count++;
-
-if(count>6){
-clearInterval(interval);
-}
-
-},100);
+    return options[random];
 
 }
 
-function playGame(userChoice){
+function animateComputer() {
 
-playerMove.innerText=moves[userChoice];
+    const options = ["✊", "📄", "✂️"];
 
-animateComputer();
+    let count = 0;
 
-setTimeout(()=>{
+    const interval = setInterval(() => {
 
-const compChoice=computerChoice();
+        computerMove.innerText = options[count % 3];
 
-computerMove.innerText=moves[compChoice];
+        count++;
 
-if(userChoice===compChoice){
+        if (count > 6) {
+            clearInterval(interval);
+        }
 
-result.innerText="Draw 🤝";
-
-}
-
-else if(
-
-userChoice==="rock" && compChoice==="scissors" ||
-userChoice==="paper" && compChoice==="rock" ||
-userChoice==="scissors" && compChoice==="paper"
-
-){
-
-userScore++;
-
-userScoreSpan.innerText=userScore;
-
-result.innerText="You Win 🎉";
+    }, 100);
 
 }
 
-else{
+function playGame(userChoice) {
 
-compScore++;
+    playerMove.innerText = moves[userChoice];
 
-compScoreSpan.innerText=compScore;
+    animateComputer();
 
-result.innerText="Computer Wins 🤖";
+    setTimeout(() => {
+
+        const compChoice = computerChoice();
+
+        computerMove.innerText = moves[compChoice];
+
+        if (userChoice === compChoice) {
+
+            result.innerText = "Draw 🤝";
+
+        }
+
+        else if (
+
+            userChoice === "rock" && compChoice === "scissors" ||
+            userChoice === "paper" && compChoice === "rock" ||
+            userChoice === "scissors" && compChoice === "paper"
+
+        ) {
+
+            userScore++;
+
+            userScoreSpan.innerText = userScore;
+
+            result.innerText = "You Win 🎉";
+
+        }
+
+        else {
+
+            compScore++;
+
+            compScoreSpan.innerText = compScore;
+
+            result.innerText = "Computer Wins 🤖";
+
+        }
+
+        if (userScore === 5 || compScore === 5) {
+
+            gameOverScreen.classList.remove("hidden");
+
+            winnerText.innerText = userScore === 5 ? "You Won The Game 🎉" : "Computer Won The Game 🤖";
+
+        }
+
+    }, 700);
 
 }
 
-if(userScore===5 || compScore===5){
+choices.forEach(choice => {
 
-gameOverScreen.classList.remove("hidden");
+    choice.addEventListener("click", () => {
 
-winnerText.innerText=userScore===5?"You Won The Game 🎉":"Computer Won The Game 🤖";
+        const userChoice = choice.dataset.choice;
 
-}
+        playGame(userChoice);
 
-},700);
-
-}
-
-choices.forEach(choice=>{
-
-choice.addEventListener("click",()=>{
-
-const userChoice=choice.dataset.choice;
-
-playGame(userChoice);
+    });
 
 });
 
-});
+playAgainBtn.addEventListener("click", () => {
 
-playAgainBtn.addEventListener("click",()=>{
+    userScore = 0;
 
-userScore=0;
+    compScore = 0;
 
-compScore=0;
+    userScoreSpan.innerText = 0;
 
-userScoreSpan.innerText=0;
+    compScoreSpan.innerText = 0;
 
-compScoreSpan.innerText=0;
+    playerMove.innerText = "❔";
 
-playerMove.innerText="❔";
+    computerMove.innerText = "❔";
 
-computerMove.innerText="❔";
+    result.innerText = "Choose your move";
 
-result.innerText="Choose your move";
-
-gameOverScreen.classList.add("hidden");
+    gameOverScreen.classList.add("hidden");
 
 });
