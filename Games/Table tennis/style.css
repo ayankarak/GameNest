@@ -90,8 +90,6 @@ canvas {
   transform: scale(1.05);
 }
 
-/* ===== Game Over Screen ===== */
-
 .game-over {
   position: absolute;
   top: 50%;
@@ -112,8 +110,6 @@ canvas {
 .game-over h2 {
   margin-bottom: 10px;
 }
-
-/* ===== Responsive Design ===== */
 
 @media (max-width: 900px) {
   .main-container {
