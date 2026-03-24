@@ -272,7 +272,6 @@ function restartGame() {
 // }
 
 let animationId;
-
 function gameLoop() {
     if (gameOver) return;
 
