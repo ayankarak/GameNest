@@ -18,58 +18,58 @@ let moves = 0
 let difficulty = "easy"
 
 // LEVEL GENERATOR
-function createGame(){
+function createGame() {
 
-let colorCount
+    let colorCount
 
-if(difficulty === "easy"){
-colorCount = 5
-}
-else if(difficulty === "medium"){
-colorCount = 6
-}
-else{
-colorCount = 8
-}
+    if (difficulty === "easy") {
+        colorCount = 5
+    }
+    else if (difficulty === "medium") {
+        colorCount = 6
+    }
+    else {
+        colorCount = 8
+    }
 
-let levelColors = allColors.slice(0,colorCount)
+    let levelColors = allColors.slice(0, colorCount)
 
-let pool=[]
+    let pool = []
 
-levelColors.forEach(color=>{
-for(let i=0;i<capacity;i++){
-pool.push(color)
-}
-})
+    levelColors.forEach(color => {
+        for (let i = 0; i < capacity; i++) {
+            pool.push(color)
+        }
+    })
 
-shuffle(pool)
+    shuffle(pool)
 
-tubes=[]
+    tubes = []
 
-// filled tubes
-for(let i=0;i<colorCount;i++){
+    // filled tubes
+    for (let i = 0; i < colorCount; i++) {
 
-let tube=[]
+        let tube = []
 
-for(let j=0;j<capacity;j++){
-tube.push(pool.pop())
-}
+        for (let j = 0; j < capacity; j++) {
+            tube.push(pool.pop())
+        }
 
-tubes.push(tube)
+        tubes.push(tube)
 
-}
+    }
 
-// empty tubes
-tubes.push([])
-tubes.push([])
+    // empty tubes
+    tubes.push([])
+    tubes.push([])
 
-history=[]
-moves=0
-updateMoves()
+    history = []
+    moves = 0
+    updateMoves()
 
-selectedTube=null
+    selectedTube = null
 
-renderGame()
+    renderGame()
 
 }
 
