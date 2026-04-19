@@ -147,7 +147,7 @@ function setDifficulty(level) {
 
     difficultyPanel.style.display = "none";
 
-    gameLoop(); 
+    gameLoop();
 }
 
 function moveAI() {
