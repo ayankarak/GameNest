@@ -143,27 +143,19 @@ function setDifficulty(level) {
 
 function moveAI() {
     if (ball.dx > 0) {
-
         aiFrameCounter++;
-
         if (aiFrameCounter > aiReactionDelay) {
-
             let predictedY = ball.y + ball.dy * 10;
-
             let error = (Math.random() - 0.5) * 60;
-
             aiTargetY = predictedY - rightPaddle.height / 2 + error;
-
             aiFrameCounter = 0;
         }
-
         let diff = aiTargetY - rightPaddle.y;
-
         if (Math.abs(diff) > 5) {
             rightPaddle.y += diff * 0.1;
         }
-
-    } else {
+    } 
+    else {
         let center = canvas.height / 2 - rightPaddle.height / 2;
         rightPaddle.y += (center - rightPaddle.y) * 0.05;
     }
