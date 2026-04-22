@@ -131,17 +131,13 @@ function setDifficulty(level) {
     if (level === "easy") {
         aiReactionDelay = 25;
     }
-
     if (level === "medium") {
         aiReactionDelay = 15;
     }
-
     if (level === "hard") {
         aiReactionDelay = 5;
     }
-
     difficultyPanel.style.display = "none";
-
     gameLoop();
 }
 
