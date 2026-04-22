@@ -54,12 +54,9 @@ function drawPaddle(paddle) {
 }
 
 canvas.addEventListener("mousemove", function (e) {
-
     const rect = canvas.getBoundingClientRect();
     const mouseY = e.clientY - rect.top;
-
     let target = mouseY - leftPaddle.height / 2;
-
     leftPaddle.y += (target - leftPaddle.y) * 0.2;
 
 });
@@ -67,14 +64,13 @@ canvas.addEventListener("mousemove", function (e) {
 function moveBall() {
     ball.x += ball.dx;
     ball.y += ball.dy;
-
     if (
         ball.y - ball.radius < 0 ||
         ball.y + ball.radius > canvas.height
-    ) {
+    )
+    {
         ball.dy *= -1;
     }
-
     if (
         ball.dx < 0 &&
         ball.x - ball.radius < leftPaddle.x + leftPaddle.width &&
@@ -84,7 +80,6 @@ function moveBall() {
         ball.dx *= -1;
         ball.x = leftPaddle.x + leftPaddle.width + ball.radius;
     }
-
     if (
         ball.dx > 0 &&
         ball.x + ball.radius > rightPaddle.x &&
