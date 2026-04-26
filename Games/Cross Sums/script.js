@@ -182,11 +182,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // PLAY AGAIN
     document.getElementById("playAgainBtn").onclick = function () {
-    resultScreen.style.display = "none"
-    levelSelect.style.display = "block"
-    game.innerHTML = ""
+        resultScreen.style.display = "none"
+        levelSelect.style.display = "block"
+        game.innerHTML = ""
 
-}
+    }
     // INITIAL GAME
     //startGame(5)
 
