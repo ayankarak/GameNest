@@ -37,7 +37,6 @@ let bird = {
 let pipes = [];
 let pipeWidth = 80;
 let gap = 150;
-
 let score = 0;
 let frames = 0;
 let gameOver = false;
