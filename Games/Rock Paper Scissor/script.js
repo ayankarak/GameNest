@@ -78,9 +78,7 @@ function playGame(userChoice) {
         ) {
 
             userScore++;
-
             userScoreSpan.innerText = userScore;
-
             result.innerText = "You Win 🎉";
 
         }
