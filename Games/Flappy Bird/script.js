@@ -77,7 +77,6 @@ function update() {
   // background
   bgX -= bgSpeed;
   if (bgX <= -canvas.width) bgX = 0;
-
   ctx.drawImage(bgImage, bgX, 0, canvas.width, canvas.height);
   ctx.drawImage(bgImage, bgX + canvas.width, 0, canvas.width, canvas.height);
 
