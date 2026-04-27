@@ -134,7 +134,6 @@ function update() {
   requestAnimationFrame(update);
 }
 
-
 function endGame() {
   gameOver = true;
   document.getElementById("finalScore").innerText = score;
