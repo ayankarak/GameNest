@@ -131,13 +131,9 @@ function handleClick(index) {
         renderGame()
 
     } else {
-
         pourWater(selectedTube, index)
-
         selectedTube = null
-
         renderGame()
-
         if (checkWin()) {
             setTimeout(() => alert("Level Complete!"), 200)
         }
