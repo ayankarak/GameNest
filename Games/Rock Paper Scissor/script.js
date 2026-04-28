@@ -92,11 +92,8 @@ function playGame(userChoice) {
         }
 
         if (userScore === 5 || compScore === 5) {
-
             gameOverScreen.classList.remove("hidden");
-
             winnerText.innerText = userScore === 5 ? "You Won The Game 🎉" : "Computer Won The Game 🤖";
-
         }
 
     }, 700);
