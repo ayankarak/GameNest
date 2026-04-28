@@ -162,14 +162,10 @@ function pourWater(from, to) {
     if (toTube.length !== 0 && toTube[toTube.length - 1] !== movingColor) {
         return
     }
-
     // SAVE STATE FOR UNDO
     history.push(JSON.parse(JSON.stringify(tubes)))
-
     let count = 0
-
     for (let i = fromTube.length - 1; i >= 0; i--) {
-
         if (fromTube[i] === movingColor) {
             count++
         } else {
