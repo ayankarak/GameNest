@@ -86,9 +86,7 @@ function playGame(userChoice) {
         else {
 
             compScore++;
-
             compScoreSpan.innerText = compScore;
-
             result.innerText = "Computer Wins 🤖";
 
         }
