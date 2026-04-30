@@ -103,9 +103,7 @@ function playGame(userChoice) {
 choices.forEach(choice => {
 
     choice.addEventListener("click", () => {
-
         const userChoice = choice.dataset.choice;
-
         playGame(userChoice);
 
     });
