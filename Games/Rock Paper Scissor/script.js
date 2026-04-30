@@ -54,9 +54,7 @@ function animateComputer() {
 function playGame(userChoice) {
 
     playerMove.innerText = moves[userChoice];
-
     animateComputer();
-
     setTimeout(() => {
 
         const compChoice = computerChoice();
