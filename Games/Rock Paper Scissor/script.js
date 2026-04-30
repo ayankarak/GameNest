@@ -111,21 +111,13 @@ choices.forEach(choice => {
 });
 
 playAgainBtn.addEventListener("click", () => {
-
     userScore = 0;
-
     compScore = 0;
-
     userScoreSpan.innerText = 0;
-
     compScoreSpan.innerText = 0;
-
     playerMove.innerText = "❔";
-
     computerMove.innerText = "❔";
-
     result.innerText = "Choose your move";
-
     gameOverScreen.classList.add("hidden");
 
 });
