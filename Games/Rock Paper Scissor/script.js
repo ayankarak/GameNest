@@ -32,17 +32,11 @@ function computerChoice() {
 }
 
 function animateComputer() {
-
     const options = ["✊", "📄", "✂️"];
-
     let count = 0;
-
     const interval = setInterval(() => {
-
         computerMove.innerText = options[count % 3];
-
         count++;
-
         if (count > 6) {
             clearInterval(interval);
         }
@@ -61,7 +55,7 @@ function playGame(userChoice) {
             result.innerText = "Draw 🤝";
 
         }
-        
+
         else if (
 
             userChoice === "rock" && compChoice === "scissors" ||
