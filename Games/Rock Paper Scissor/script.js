@@ -52,21 +52,16 @@ function animateComputer() {
 }
 
 function playGame(userChoice) {
-
     playerMove.innerText = moves[userChoice];
     animateComputer();
     setTimeout(() => {
-
         const compChoice = computerChoice();
-
         computerMove.innerText = moves[compChoice];
-
         if (userChoice === compChoice) {
-
             result.innerText = "Draw 🤝";
 
         }
-
+        
         else if (
 
             userChoice === "rock" && compChoice === "scissors" ||
