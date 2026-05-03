@@ -61,7 +61,6 @@ function playGame(userChoice) {
             userChoice === "scissors" && compChoice === "paper"
 
         ) {
-
             userScore++;
             userScoreSpan.innerText = userScore;
             result.innerText = "You Win 🎉";
