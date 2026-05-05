@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const hardBtn = document.getElementById("hardBtn")
 
     // LEVEL BUTTONS
-
     easyBtn.onclick = function () {
         startGame(5)
     }
