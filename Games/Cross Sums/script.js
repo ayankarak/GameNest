@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
     // CREATE GRID
 
     function generateGrid() {
