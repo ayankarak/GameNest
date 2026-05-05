@@ -5,7 +5,6 @@ canvas.width = 700;
 canvas.height = 400;
 
 let imagesLoaded = 0;
-
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === 2) {
