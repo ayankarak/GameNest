@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // CHECK ANSWER
-    
+
     checkBtn.onclick = function () {
 
         let correct = true
@@ -188,6 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
         game.innerHTML = ""
 
     }
+
+    
     // INITIAL GAME
     //startGame(5)
 
