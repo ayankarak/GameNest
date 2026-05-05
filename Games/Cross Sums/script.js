@@ -82,7 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
+
     // DRAW GRID
+    
     function draw() {
         game.innerHTML = ""
         game.style.gridTemplateColumns = `repeat(${size + 1},60px)`
