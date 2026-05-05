@@ -2,7 +2,6 @@ const choices = document.querySelectorAll(".choice");
 
 const playerMove = document.getElementById("player-move");
 const computerMove = document.getElementById("computer-move");
-
 const result = document.getElementById("result");
 
 const userScoreSpan = document.getElementById("user-score");
