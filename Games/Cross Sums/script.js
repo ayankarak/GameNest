@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     let size = 7
-
     let solution = []
     let removedSolution = []
     let rowSum = []
