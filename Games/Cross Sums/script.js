@@ -189,7 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    
     // INITIAL GAME
     //startGame(5)
 
