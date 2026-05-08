@@ -160,11 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let correct = true
 
         for (let r = 0; r < size; r++) {
-            for (let c = 0; c < size; c++) {
+            for (let c = 0; c<size; c++) {
                 let cell = document.querySelector(`[data-r="${r}"][data-c="${c}"]`)
-                let removed = cell.classList.contains("removed")
-                if (removed != removedSolution[r][c]) {
-                    correct = false
+                let removed=cell.classList.contains("removed")
+                if (removed!=removedSolution[r][c]) {
+                    correct=false
                 }
             }
         }
