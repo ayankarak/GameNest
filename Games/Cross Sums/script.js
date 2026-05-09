@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
             removedSolution[r] = []
             for (let c = 0; c < size; c++) {
                 let num = Math.floor(Math.random() * 4) + 1
-                solution[r][c] = num
-                removedSolution[r][c] = Math.random() < 0.3
+                solution[r][c]=num
+                removedSolution[r][c]=Math.random() < 0.3
             }
 
         }
