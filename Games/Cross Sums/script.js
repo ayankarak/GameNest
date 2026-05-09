@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         size = newSize
         solution = []
         removedSolution = []
-        rowSum = []
-        colSum = []
+        rowSum=[]
+        colSum=[]
         lastCell = null
         undoBtn.disabled = true
         resultScreen.style.display = "none"
